@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
     "declaration": true,
     "baseUrl": ".",
     "module": "esnext",
-    "outDir": "dist",
     "target": "es5",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": ".",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -21,8 +20,7 @@
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true
   },
-  "include": [
-  ],
+  "include": [],
   "exclude": [
     "node_modules",
     "build",
@@ -34,4 +32,4 @@
     "src/setupTests.ts",
     "*.js"
   ]
-} 
+}

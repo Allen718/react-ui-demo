@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+
+
 import Button from './button';
+const a = 1;
 
-
-ReactDOM.render(<Button></Button>, document.body); 
+export default { Button, a }
