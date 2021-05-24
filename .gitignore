@@ -1,3 +1,5 @@
+#构建以后的文件夹不用
+/dist/*
 # Logs
 logs
 *.log
