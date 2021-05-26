@@ -1,11 +1,11 @@
 {
-  "name": "react-ui-demo",
-  "version": "0.0.2",
+  "name": "yang-react-ui-demo",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/lib/index",
   "types": "dist/lib/index",
   "files": [
-    "/dist"
+    "/dist/**/*"
   ],
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
