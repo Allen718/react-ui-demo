@@ -1,4 +1,4 @@
-import classes from '../classes'
+import {classes} from '../classes'
 
 describe('classes', () => {
     it('接受一个参数', () => {
