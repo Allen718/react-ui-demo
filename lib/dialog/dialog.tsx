@@ -26,7 +26,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     <Fragment>
       {props.closeOnClickMask?null:<div className={sc('mask')} onClick={onClickMask}>
       </div>}
-      <div className={sc()}>
+      <div className={sc({'':true})}>
         <div className={sc('close')} onClick={(e)=>{
           console.log('12344')
           onClickClose(e)}}>

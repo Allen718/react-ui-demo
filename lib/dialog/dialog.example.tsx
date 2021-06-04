@@ -17,7 +17,7 @@ export default function () {
         <button onClick={openModal}>modal</button>
       </div>
 
-      <div>
+      <div >
         <h1>example 3</h1>
         <button onClick={() => alert('1')}>alert</button>
         <button onClick={() => confirm('1', () => {
