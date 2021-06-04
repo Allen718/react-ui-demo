@@ -1,14 +1,14 @@
 import React from 'react';
-import Icon from './icon';
+import Demo from "./demo/demo";
+import DemoExample from "./demo/example";
+
 
 const IconExample: React.FunctionComponent = () => {
-  return (
-    <div>
-      <Icon name="alipay"/>
-      <Icon name="wechat"/>
-      <Icon name="qq"/>
-    </div>
-  );
+ return(
+   <Demo code={require('!!raw-loader!./demo/example').default}>
+     <DemoExample/>
+   </Demo>
+ )
 };
 
 export default IconExample;
