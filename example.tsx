@@ -1,42 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import {HashRouter as Router, Route,NavLink} from 'react-router-dom';
 import IconExample from './lib/icon/icon.example';
 import ButtonExample from './lib/button.example';
 import DialogExample from './lib/dialog/dialog.example';
-
+import LayoutExample from './lib/layout/layout.example';
+import logo from './lib/assets/logo.png' ;
+import text from './lib/assets/text.png'
+import './example.scss';
+import {Header, Footer, Content, Aside, Layout} from './lib/layout/layout';
 
 ReactDOM.render(
   <Router>
-    <div>
-      <header>
+    <Layout className={'site-page'}>
+      <Header className={'site-header'}>
         <div className="logo">
-          FUI
+          <img src={logo}/>
         </div>
-
-      </header>
-      <div>
-        <aside>
+        <div className={'text'}>
+          <img src={text}/>
+        </div>
+      </Header>
+      <Layout>
+        <Aside className={'site-aside'}>
           <h2>组件</h2>
           <ul>
             <li>
-              <Link to="/icon">Icon</Link>
+              <NavLink to="/icon">Icon</NavLink>
             </li>
             <li>
-              <Link to="/button">Button</Link>
+              <NavLink to="/button">Button</NavLink>
             </li>
             <li>
-              <Link to="/dialog">dialog</Link>
+              <NavLink to="/dialog">dialog</NavLink>
+            </li>
+            <li>
+              <NavLink to="/layout">layout</NavLink>
             </li>
           </ul>
-        </aside>
-        <main>
+        
+        </Aside>
+        <Content className={'site-main'}>
           <Route path="/icon" component={IconExample}/>
           <Route path="/button" component={ButtonExample}/>
           <Route path="/dialog" component={DialogExample}/>
-        </main>
-
-      </div>
-    </div>
+          <Route path="/layout" component={LayoutExample}/>
+        </Content>
+      </Layout>
+      <Footer className="site-footer">
+        &copy; 方应杭
+      </Footer>
+    </Layout>
   </Router>
   , document.querySelector('#root'));
