@@ -1,5 +1,7 @@
 #构建以后的文件夹不用
-/dist/*
+/doc/*
+#打包以后的文件
+dist/*/**
 # Logs
 logs
 *.log
