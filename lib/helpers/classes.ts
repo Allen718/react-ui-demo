@@ -2,12 +2,16 @@ const classes = (...names: (string | undefined)[]) => {
   return names.filter(Boolean).join(' ');
 }
 
+interface Group {
+  [k: string]: string | undefined
+}
+
 interface Options {
-  extra?: string|undefined
+  extra?: string | undefined
 }
 
 interface ClassToggles {
-  [k: string]: boolean
+  [k: string]: boolean | undefined
 };
 const scopedClassMarker = (prefix: string) =>
   (name: string | ClassToggles, options?: Options) =>
@@ -20,4 +24,11 @@ const scopedClassMarker = (prefix: string) =>
         .join('-'))
       .concat(options && options.extra || [])
       .join(' ');
-export {classes, scopedClassMarker};
+
+const classGroup = (prefix: string) => {
+  return (group: Group) => Object
+    .entries(group).filter(i => i[1] !== undefined)
+    .map(i => i[1])
+    .map(i => `${prefix}-${i}`).join(' ')
+}
+export {classes, scopedClassMarker, classGroup};
