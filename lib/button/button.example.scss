@@ -1,0 +1,10 @@
+.button-type{
+  margin-top:24px ;
+  >button{
+
+    margin-left: 24px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}

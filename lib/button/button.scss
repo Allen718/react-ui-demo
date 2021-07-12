@@ -1,0 +1,109 @@
+@import '../helper';
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fui-button {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  border: 1px solid $Main-color;
+  border-radius: 4px;
+  line-height: 22px;
+  font-size: 14px;
+  padding: 4px 16px;
+  color: $Main-color;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 250ms;
+&-large{
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px 16px;
+}
+  &-small{
+    font-size: 12px;
+    line-height: 20px;
+    padding: 2px 10px;
+  }
+  &-left {
+    > .fui-button-content {
+      order: 2;
+
+    }
+    > .fui-button-icon {
+      margin-right: 8px;
+      order: 1;
+    }
+    .fui-button-loading {
+      animation: spin 1s infinite linear;
+    }
+  }
+  &:focus, &:hover {
+    outline: none;
+    border-color: $main-color;
+    color: $main-color;
+  }
+
+  &-primary {
+    color: #fff;
+    background-color: $main-color;
+    border-color: $main-color;
+
+    &:focus, &:hover {
+      outline: none;
+      border-color: $main-color;
+      background-color: fade-out($main-color, 0.15);
+      color: #ffffff;
+    }
+  }
+
+  &-disabled {
+    color: $disabled;
+    border-color: $disabled;
+    cursor: no-drop;
+  }
+
+  &-warning {
+    color: $warning;
+    border-color: $warning;
+
+    &:focus, &:hover {
+      color: #ff9800;
+      border-color: #ff9800;
+    }
+  }
+
+  &-danger {
+    color: $danger;
+    border-color: $danger;
+
+    &:focus, &:hover {
+      color: fade-in($danger, 0.5);
+      border-color: fade-in($danger, 0.5);
+    }
+  }
+
+  &-dashed {
+    border-style: dashed;
+  }
+
+  &-right {
+    > .fui-button-icon {
+      order: 2;
+      margin-right: 0px;
+      margin-left: 8px;
+    }
+
+    > .fui-button-content {
+      order: 1;
+
+    }
+  }
+}
