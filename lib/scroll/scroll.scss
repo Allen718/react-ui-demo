@@ -1,0 +1,54 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fui-scroll {
+  width: 500px;
+  position: relative;
+  overflow: hidden;
+  &-inner {
+    border: 1px solid red;
+    position: absolute;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &-track {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &-bar {
+    height: 0px;
+    width: 6px;
+    background-color: rgba(128, 128, 128, 0.8);
+    position: absolute;
+    border-radius: 3px;
+    top: 0;
+    left: 0;
+  }
+  &-pulling {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-icon {
+      font-size: 30px;
+    }
+    &-text {
+      animation: spin 1s infinite linear;
+      font-size: 12px;
+    }
+  }
+}
