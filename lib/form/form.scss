@@ -1,0 +1,35 @@
+.fui-form {
+
+
+}
+
+.fui-form {
+  &-table {
+    border-collapse: collapse;
+  }
+
+  &-error {
+    color: red;
+    margin-top: 4px;
+    font-size: 0.8rem
+  }
+
+  &-td {
+    vertical-align: top;
+    padding-top: 0;
+    padding-bottom: 12px;
+  }
+
+  &-tr:first-child &-td {
+    padding-top: 0;
+  }
+
+  &-tr:last-child &-td {
+    padding-bottom: 0;
+  }
+
+  &-td + &-td {
+    padding-left: 16px;
+  }
+
+}
